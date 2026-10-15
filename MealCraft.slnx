@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Domain/MealCraft.Domain.csproj" />
+  <Project Path="MealCraft.Application/MealCraft.Application.csproj" />
+  <Project Path="MealCraft.Infrastructure/MealCraft.Infrastructure.csproj" />
+  <Project Path="MealCraft/MealCraft.Api.csproj" />
+</Solution>
