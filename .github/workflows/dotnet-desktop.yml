@@ -1,0 +1,42 @@
+name: MealCraft CI
+
+# Запускаем проверки при push и Pull Request в dev.
+on:
+  push:
+    branches: [dev]
+  pull_request:
+    branches: [dev]
+
+jobs:
+  build:
+    # Используем Linux для сборки кроссплатформенного .NET API.
+    runs-on: ubuntu-latest
+
+    steps:
+      # Получаем исходный код репозитория.
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Устанавливаем .NET SDK 10.
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      # Восстанавливаем зависимости всех проектов решения.
+      - name: Restore dependencies
+        run: dotnet restore MealCraft.slnx
+
+      # Проверяем форматирование C# без изменения файлов.
+      - name: Check code format
+        run: dotnet format MealCraft.slnx --verify-no-changes --no-restore
+
+      # Собираем все проекты решения в конфигурации Release.
+      - name: Build solution
+        run: dotnet build MealCraft.slnx --no-restore --configuration Release
+
+
+
+   # - name: Test
+      # run: dotnet test --no-build --configuration Release
+
