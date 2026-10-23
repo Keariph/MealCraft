@@ -27,6 +27,15 @@ A recipe management web application with planned ingredient delivery integration
 MealCraft
 ├── MealCraft.Api
 ├── MealCraft.Domain
+├── Entities
+│   ├── BaseEntity.cs
+│   ├── GroupIngredients.cs
+│   ├── Ingredient.cs
+│   ├── Recipe.cs
+│   ├── RecipeIngredient.cs
+│   └── Step.cs
+└── Enums
+    └── MeasurementUnit.cs
 ├── MealCraft.Application
 └── MealCraft.Infrastructure
 ```
