@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+  </Folder>
   <Project Path="Domain/MealCraft.Domain.csproj" />
   <Project Path="MealCraft.Application/MealCraft.Application.csproj" />
   <Project Path="MealCraft.Infrastructure/MealCraft.Infrastructure.csproj" />
